@@ -1,0 +1,23 @@
+
+/* paginate component styles */
+.paginate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    position: relative;
+    padding: 1rem 0; 
+  }
+  
+  .paginate > * {
+    position: absolute;
+    cursor: pointer; 
+  }
+  
+  .paginate__arrow__R {
+    left: 0;
+  }
+  
+  .paginate__arrow__L {
+    right: 0;
+  }
