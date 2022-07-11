@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 // import Paginate from './components/Paginate';
 
+import Intro from './components/Intro';
+import Prompt from './components/Prompt';
+
 
 function App() {
   const postsPerPage = 25;
@@ -24,16 +27,13 @@ function App() {
   }, [page]);
 
   return (
-    <div>
-      <h1>playlist prompts</h1>
-
+    <div className="wrapper">
+      <Intro/>
       {/* <Paginate page={page} total={total} setPage={setPage}/> */}
 
       <div>
         {prompts && prompts.map(el => {
-          return (<p key={el.key}>
-            {el.content}
-            </p>)
+          return (<Prompt key={el.key} prompt={el.content}/>)
         })}
       </div>
     </div>
