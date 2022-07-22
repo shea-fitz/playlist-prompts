@@ -1,23 +1,22 @@
+html, body {
+  height: 100%;
+}
 
-/* paginate component styles */
+.wrapper {
+  margin: 25px;
+}
+
+.prompt-list {
+}
+
+.prompt {}
+
 .paginate {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 10rem;
-    position: relative;
-    padding: 1rem 0; 
-  }
-  
-  .paginate > * {
-    position: absolute;
-    cursor: pointer; 
-  }
-  
-  .paginate__arrow__R {
-    left: 0;
-  }
-  
-  .paginate__arrow__L {
-    right: 0;
-  }
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.paginate-left:hover, .paginate-right:hover {
+  cursor: pointer;
+}

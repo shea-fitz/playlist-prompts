@@ -2,14 +2,14 @@ import './App.css';
 import './tachyons.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-// import Paginate from './components/Paginate';
 
 import Intro from './components/Intro';
 import Prompt from './components/Prompt';
+import Paginate from './components/Paginate';
 
 
 function App() {
-  const postsPerPage = 25;
+  const postsPerPage = 100;
   const [prompts, setPrompts] = useState(null);
   const [total, setTotal] = useState(1);
   const [page, setPage] = useState(1);
@@ -29,13 +29,14 @@ function App() {
   return (
     <div className="wrapper">
       <Intro/>
-      {/* <Paginate page={page} total={total} setPage={setPage}/> */}
-
-      <div>
+      <div className="prompt-list">
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)
         })}
       </div>
+
+      <Paginate page={page} total={total} setPage={setPage}/>
+
     </div>
   );
 }
