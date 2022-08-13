@@ -27,12 +27,12 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Intro/>
       <div className="prompt-list">
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)
         })}
       </div>
+      <Intro/>
 
       <Paginate page={page} total={total} setPage={setPage}/>
 
