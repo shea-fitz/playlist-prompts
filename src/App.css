@@ -1,15 +1,45 @@
 html, body {
   height: 100%;
+  font-family: sans-serif;
+  background: white;
+  font-size: 1.2rem;
+  letter-spacing: .2px;
 }
 
 .wrapper {
   margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .prompt-list {
+  display: flex;
+  flex-direction: column;  
+  gap: 10px;
+  width: 250px;
+  line-height: 150%;
 }
 
-.prompt {}
+.prompt {
+  color: mediumorchid;
+  font-family: sans-serif;
+  border: 1px solid white;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  opacity: 80%;
+  cursor: pointer;
+  /* transition: box-shadow .5s; */
+}
+
+.prompt:hover {
+  opacity: 100%;
+  box-shadow: -4px 4px black;
+  border: 1px solid black;
+  color: black;
+}
+  /* background: linear-gradient(white, rgb(234, 227, 250));} */
 
 .paginate {
   display: flex;
@@ -19,4 +49,24 @@ html, body {
 
 .paginate-left:hover, .paginate-right:hover {
   cursor: pointer;
+}
+
+div.intro {
+  text-transform: uppercase;
+  color: mediumorchid;
+  border: 1px dashed mediumorchid;
+  /* border-radius: 1000px; */
+  padding: 8px 16px;
+  background-color: white;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  /* transition: box-shadow .5s; */
+}
+
+div.intro:hover {
+  box-shadow: -4px 4px black;
+  cursor: pointer;
+  color: black;
+  border: 1px solid black;
 }

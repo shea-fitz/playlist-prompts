@@ -1,5 +1,4 @@
 import './App.css';
-import './tachyons.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,7 +8,7 @@ import Paginate from './components/Paginate';
 
 
 function App() {
-  const postsPerPage = 100;
+  const postsPerPage = 25;
   const [prompts, setPrompts] = useState(null);
   const [total, setTotal] = useState(1);
   const [page, setPage] = useState(1);
