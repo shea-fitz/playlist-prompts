@@ -8,28 +8,36 @@ import Paginate from './components/Paginate';
 
 
 function App() {
-  const postsPerPage = 100;
+  let postsPerPage = 100;
   const [prompts, setPrompts] = useState(null);
   const [total, setTotal] = useState(1);
   const [page, setPage] = useState(1);
+  const [choice, setChoice] = useState(false);
 
-  function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+  // shuffle prompts on refresh
+  const shuffle = (contents) => {
+    let currentIndex = contents.length,  randomIndex;
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
       // Pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      [contents[currentIndex], contents[randomIndex]] = [
+        contents[randomIndex], contents[currentIndex]];
     }
-  
-    return array;
+    return contents;
   }
+
+  function handleChoice() {
+    setChoice(!choice);
+    console.log(choice);
+  }
+ 
+
+  
+
+
 
   useEffect(() => {
     axios.get('https://api.are.na/v2/channels/playlist-prompts', 
@@ -42,18 +50,26 @@ function App() {
     }).catch(err => console.log(err));
   }, [page]);
 
-  
-
   return (
     <div className="wrapper">
-      <div className="prompt-list">
+      <div id="top"></div>
+
+      <div className={!choice ? "prompt-list" : "hide"}>
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)
         })}
+
+        <Paginate page={page} total={total} setPage={setPage}/>
+
       </div>
+
+      <div className={choice ? "single-prompt" : "hide"}>
+        <Prompt prompt={'this prompt has been chosen for you'}/>
+      </div>
+
       <Intro/>
 
-      <Paginate page={page} total={total} setPage={setPage}/>
+      <div className="choose" onClick={handleChoice}>pick one</div>
 
     </div>
   );

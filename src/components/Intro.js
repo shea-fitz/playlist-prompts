@@ -6,22 +6,18 @@ const Intro = () => {
 
     const [visibility, setVisibility] = useState(false);
 
-    function handleClick() {
+    function handleModal() {
         setVisibility(!visibility);
         console.log(visibility);
     }
 
 return(
     <>
-
     <div className="header">
-        Playlist Prompts
+        <a href="#top" className="title">Playlist Prompts</a>
     </div>
 
-    <div className="about" onClick={handleClick}>about</div>
-
-
-
+    <div className="about" onClick={handleModal}>about</div>
 
 
         <Fade when={visibility}>

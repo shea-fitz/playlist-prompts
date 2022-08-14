@@ -4,7 +4,11 @@ html, body {
   background: white;
   font-size: 1.25rem;
   letter-spacing: .3px;
+  scroll-behavior: smooth;
 }
+
+
+/* PROMPTS */
 
 .wrapper {
   margin: 25px;
@@ -19,7 +23,7 @@ html, body {
   display: flex;
   flex-direction: column;  
   gap: 40px;
-  width: 260px;
+  width: 300px;
   line-height: 150%;
 }
 
@@ -32,19 +36,28 @@ html, body {
   /* transition: box-shadow .5s; */
 }
 
-.prompt:hover {
-
+.single-prompt {
+  display: block;
 }
 
-.paginate {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+/* INFO */
+
+a {
+  color: mediumorchid;
+  text-decoration: underline;
+  text-decoration-color: mediumaquamarine;
+  transition: text-decoration-color .2s;
 }
 
-.paginate-left:hover, .paginate-right:hover {
+a:hover {
   cursor: pointer;
+  text-decoration-color: aquamarine;
 }
+
+.title {
+  text-decoration: none;
+}
+
 
 .header {
   width: 100%;
@@ -58,23 +71,30 @@ html, body {
   font-size: .75rem;
 }
 
-div.about {
-  /* text-transform: uppercase; */
+div.about, div.choose {
   color: mediumorchid;
   border: 1px dashed mediumorchid;
-  /* border-radius: 1000px; */
   padding: 8px 16px;
   background-color: white;
   position: fixed;
-  top: 16px;
-  right: 16px;
   font-size: .75rem;
-  /* transition: box-shadow .5s; */
 }
 
-div.about:hover {
+div.about:hover, div.choose:hover {
   cursor: pointer;
 }
+
+div.about {
+  top: 16px;
+  right: 16px;
+}
+
+div.choose {
+  top: 16px;
+  left: 16px;
+}
+
+
 
 .list {
   line-height: 200%;
@@ -88,7 +108,8 @@ div.about:hover {
 }
 
 .credits {
-  font-size: .5rem;
+  font-size: .6rem;
+  margin-top: 24px;
 }
 
 .intro-modal {
@@ -112,7 +133,24 @@ div.about:hover {
   display: none;
 }
 
-/* scrollbar */
+#top {
+  position: absolute;
+  top: 0;
+}
+
+/* PAGINATION & LOADING  */
+
+.paginate {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.paginate-left:hover, .paginate-right:hover {
+  cursor: pointer;
+}
+
+/* SCROLLBAR */
 
 /* width */
 ::-webkit-scrollbar {
@@ -128,5 +166,36 @@ div.about:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: mediumorchid; 
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 500px) {
+
+  .wrapper {
+    margin-top: 30%;
+  }
+
+  .intro-modal {
+    width: 90vw;
+    background: white;
+    top: 10%;
+    color: mediumorchid;
+    font-size: .75rem;
+}
+
+div.about {
+  bottom: 16px;
+  top: auto;
+  right: 16px;
+}
+
+div.choose {
+  bottom: 16px;
+  top: auto;
+  left: 16px;
+}
+
 }
 
