@@ -46,7 +46,19 @@ html, body {
   cursor: pointer;
 }
 
-div.intro {
+.header {
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 40%, #ffffff6b 68.49%, rgba(255, 255, 255, 0) 100%);
+  position: fixed;
+  top: 0;
+  text-align: center;
+  color: mediumorchid;
+  padding: 24px 0px;
+  text-transform: uppercase;
+  font-size: .75rem;
+}
+
+div.about {
   /* text-transform: uppercase; */
   color: mediumorchid;
   border: 1px dashed mediumorchid;
@@ -60,23 +72,61 @@ div.intro {
   /* transition: box-shadow .5s; */
 }
 
-div.intro:hover {
+div.about:hover {
   cursor: pointer;
 }
 
+.list {
+  line-height: 200%;
+  list-style: none;
+}
+
+.year {
+  font-size: .675rem;
+  font-style: italic;
+  padding-right: 8px;
+}
+
+.credits {
+  font-size: .5rem;
+}
+
 .intro-modal {
-    background: rgba(255, 255, 255, 0.796);
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid mediumorchid;
-    width: 75%;
-    height: 500px;
+    width: 50vw;
     position: fixed;
     top: 20%;
+    bottom: 20%;
+    transform: translate(0px, -5px);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    color: mediumorchid;
+    padding: 25px;
+    font-size: .75rem;
 }
 
 .hide {
   display: none;
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(186, 85, 211, 0.8); 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: mediumorchid; 
 }
 
