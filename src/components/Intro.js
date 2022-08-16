@@ -25,15 +25,16 @@ return(
             <p>
             Playlist Prompts was started by <a href="https://www.are.na/shea" target="_blank">Shea Fitzpatrick</a> in 2020 and so far has taken form as:
             </p>
-               
-            <ul className="list">
-                <li><span className="year">[ ongoing ]</span>An ambient collaboration between <a href="https://www.are.na/shea/playlist-prompts" target="_blank">internet strangers</a></li>
 
-                <li><span className="year">[ 2020 ]</span>A participatory <a href="https://tinyletter.com/playlistprompts" target="_blank">newsletter</a></li>
+            <div className="list">
+                <div className="list-item"><div className="year">[ongoing]</div><div className="description">An ambient collaboration between <a href="https://www.are.na/shea/playlist-prompts" target="_blank">internet strangers</a></div></div>
 
-                <li><span className="year">[ 2021 ]</span>A poem co-written with Mad Hsia and published in the <a href="https://store.are.na/products/are-na-annual-2021?variant=38246218563735" target="_blank">Are.na Annual</a></li>
-                <li><span className="year">[ 2022 ]</span>This website</li>
-            </ul>
+                <div className="list-item"><div className="year">[2020]</div><div>A participatory <a href="https://tinyletter.com/playlistprompts" target="_blank">newsletter</a></div></div>
+
+                <div className="list-item"><div className="year">[2021]</div><div>A poem co-written with <a href="https://www.are.na/mad">Mad</a> that was published in the <a href="https://store.are.na/products/are-na-annual-2021?variant=38246218563735" target="_blank">Are.na Annual</a>, with an accompanying <a href="https://www.are.na/mad/a-channel-that-is-a-gift" target="_blank">channel and playlist</a></div></div>
+
+                <div className="list-item"><div className="year">[2022]</div><div>This website</div></div>
+            </div>
 
             <p>For now, submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>, where it began.</p>
 

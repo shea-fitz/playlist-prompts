@@ -95,16 +95,26 @@ div.choose {
 }
 
 
-
 .list {
-  line-height: 200%;
-  list-style: none;
+  margin: 16px 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: top;
+  margin-bottom: 16px;
+  line-height: 150%;
+  width: 35vw;
 }
 
 .year {
   font-size: .675rem;
   font-style: italic;
-  padding-right: 8px;
+  padding-right: 12px;
+  display: inline;
+  width: 70px;
+  flex-shrink: 0;
+  /* text-align: right; */
 }
 
 .credits {
@@ -115,18 +125,17 @@ div.choose {
 .intro-modal {
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid mediumorchid;
-    width: 50vw;
+    width: auto;
     position: fixed;
     top: 20%;
-    bottom: 20%;
-    transform: translate(0px, -5px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     color: mediumorchid;
-    padding: 25px;
+    padding: 40px;
     font-size: .75rem;
+    line-height: 150%;
 }
 
 .hide {
@@ -148,6 +157,27 @@ div.choose {
 
 .paginate-left:hover, .paginate-right:hover {
   cursor: pointer;
+}
+
+.loading {
+  color: mediumorchid;
+  font-style: italic;
+  /* border: 1px dashed mediumorchid; */
+  border: none;
+  padding: 8px 16px;
+  background-color: white;
+  font-size: .75rem;
+  margin-bottom: 24px;
+}
+
+.load-more {
+  color: mediumorchid;
+  /* font-style: italic; */
+  border: 1px dashed mediumorchid;
+  padding: 8px 16px;
+  background-color: white;
+  font-size: .75rem;
+  margin-bottom: 24px;
 }
 
 /* SCROLLBAR */
@@ -183,19 +213,28 @@ div.choose {
     top: 10%;
     color: mediumorchid;
     font-size: .75rem;
-}
+  }
 
-div.about {
-  bottom: 16px;
-  top: auto;
-  right: 16px;
-}
+  .list-item {
+    width: auto;
+  }
 
-div.choose {
-  bottom: 16px;
-  top: auto;
-  left: 16px;
-}
+  /* .year {
+    text-align: right;
+    padding-right: 16px;
+  } */
+
+  div.about {
+    bottom: 16px;
+    top: auto;
+    right: 16px;
+  }
+
+  div.choose {
+    bottom: 16px;
+    top: auto;
+    left: 16px;
+  }
 
 }
 
