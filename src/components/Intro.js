@@ -27,7 +27,7 @@ return(
             </p>
 
             <div className="list">
-                <div className="list-item"><div className="year">[ongoing]</div><div className="description">An ambient collaboration between <a href="https://www.are.na/shea/playlist-prompts" target="_blank">internet strangers</a></div></div>
+                <div className="list-item"><div className="year">[ongoing]</div><div>An ambient collaboration between <a href="https://www.are.na/shea/playlist-prompts" target="_blank">internet strangers</a></div></div>
 
                 <div className="list-item"><div className="year">[2020]</div><div>A participatory <a href="https://tinyletter.com/playlistprompts" target="_blank">newsletter</a></div></div>
 

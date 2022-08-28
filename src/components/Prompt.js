@@ -6,7 +6,7 @@ return(
     <>
     <Fade cascade>
         <div className="prompt">
-            <p>{prompt}</p>
+            <p className="prompt-text">{prompt}</p>
         </div>
     </Fade>
     
