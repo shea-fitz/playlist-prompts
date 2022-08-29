@@ -4,9 +4,7 @@ import axios from 'axios';
 
 import Intro from './components/Intro';
 import Prompt from './components/Prompt';
-
-import gradient from './img/gradient.svg';
-
+import Overlay from './components/Overlay';
 
 
 function App() {
@@ -93,11 +91,13 @@ function App() {
 
   return (
     <div className="wrapper">
+
+      {/* Link to top for scrolling */}
       <div id="top"></div>
 
-      {/* <div className="overlay"></div> */}
+      {/* <Overlay/> */}
 
-
+      {/* Prompt list – conditionally displays all prompts or single prompt */}
       <div className={!choice ? "prompt-list" : "hide"}>
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)
@@ -115,17 +115,14 @@ function App() {
           {random && <Prompt prompt={random[0].content}/>}
       </div>
 
-
-      {/* <img className="gradient" src={gradient}></img> */}
-
+      {/* Header and modal content */}
       <Intro/>
 
+      {/* Random prompt button */}
       <div className="choose" onClick={() => {
           window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
         }}>{choice ? 'choose myself' : 'choose for me'}</div>
 
-
-        
     </div>
 
 

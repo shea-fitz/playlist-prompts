@@ -1,7 +1,6 @@
 html, body {
   height: 100%;
   font-family: sans-serif;
-  background: white;
   font-size: 1.25rem;
   letter-spacing: .3px;
   scroll-behavior: smooth;
@@ -16,8 +15,10 @@ html, body {
   left: 0;
   right: 0;
   background: radial-gradient(64.05% 64.05% at 36.01% 35.95%, rgba(131, 181, 142, 0.126) 65.1%, rgba(0, 26, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-  linear-gradient(180.35deg, #FFFFFF 83.49%, rgba(255, 255, 255, 0.54) 83.49%, #9D24D6 99.7%),
+  linear-gradient(180.35deg, #ffffff00 83.49%, rgba(255, 255, 255, 0.54) 83.49%, #d397f0bf 99.7%),
   linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  opacity: 90%;
+  z-index: -1000;
 }
 
 .gradient {
@@ -26,9 +27,34 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   opacity: 50%;
   mix-blend-mode: hard-light;
+  z-index: -999;
+  filter: blur(2rem);
+}
+
+.hue-rotate {
+  animation: hue 20s infinite linear;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left: 0;
+  background-color: rgba(147, 112, 216, 0.2);
+  filter: grayscale();
+}
+
+@keyframes hue  {
+  from {
+     -webkit-filter:hue-rotate(0deg);
+  }
+  
+  to {
+     -webkit-filter:hue-rotate(360deg);
+  }
+
 }
 
 
@@ -50,18 +76,21 @@ html, body {
   width: 100%;
   line-height: 150%;
   align-items: center;
+  /* mix-blend-mode: hard-light; */
 }
 
 .prompt {
+  /* animation: hue 20s infinite linear; */
   color: mediumorchid;
   font-family: sans-serif;
-  border: 1px solid white;
   padding: 8px 12px;
   text-transform: uppercase;
   display: flex;
   width: 100%;
   justify-content: center;
   border: 1px solid transparent;
+  /* mix-blend-mode: color-dodge; */
+  mix-blend-mode: hard-light;
 }
 
 .prompt-text {
@@ -100,11 +129,10 @@ a:hover {
 
 .header {
   width: 100%;
-  background: linear-gradient(180deg, #FFFFFF 40%, #ffffff6b 68.49%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, #ffffffba 40%, #ffffff6b 68.49%, rgba(255, 255, 255, 0) 100%);
   position: fixed;
   top: 0;
   text-align: center;
-  color: mediumorchid;
   padding: 24px 0px;
   text-transform: uppercase;
   font-size: .75rem;
@@ -114,7 +142,7 @@ div.about, div.choose {
   color: mediumorchid;
   border: 1px dashed mediumorchid;
   padding: 8px 16px;
-  background-color: white;
+  /* background-color: white; */
   position: fixed;
   font-size: .75rem;
 }
@@ -204,9 +232,9 @@ div.choose {
   /* border: 1px dashed mediumorchid; */
   border: none;
   padding: 8px 16px;
-  background-color: white;
   font-size: .75rem;
   margin-bottom: 24px;
+  background: none;
 }
 
 .load-more {
@@ -214,9 +242,15 @@ div.choose {
   /* font-style: italic; */
   border: 1px dashed mediumorchid;
   padding: 8px 16px;
-  background-color: white;
   font-size: .75rem;
   margin-bottom: 24px;
+  background: none;
+  position: relative;
+  z-index: 1000;
+}
+
+.load-more:hover {
+  cursor: pointer;
 }
 
 /* SCROLLBAR */
@@ -273,6 +307,10 @@ div.choose {
     bottom: 16px;
     top: auto;
     left: 16px;
+  }
+
+  .gradient {
+    width: 2000vw;
   }
 
 }
