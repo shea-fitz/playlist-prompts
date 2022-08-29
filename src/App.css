@@ -7,6 +7,30 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* OVERLAY */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: radial-gradient(64.05% 64.05% at 36.01% 35.95%, rgba(131, 181, 142, 0.126) 65.1%, rgba(0, 26, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+  linear-gradient(180.35deg, #FFFFFF 83.49%, rgba(255, 255, 255, 0.54) 83.49%, #9D24D6 99.7%),
+  linear-gradient(0deg, #FFFFFF, #FFFFFF);
+}
+
+.gradient {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 50%;
+  mix-blend-mode: hard-light;
+}
+
 
 /* PROMPTS */
 

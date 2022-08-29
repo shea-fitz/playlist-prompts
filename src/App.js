@@ -4,49 +4,28 @@ import axios from 'axios';
 
 import Intro from './components/Intro';
 import Prompt from './components/Prompt';
-import Paginate from './components/Paginate';
+
+import gradient from './img/gradient.svg';
+
 
 
 function App() {
   let postsPerPage = 100;
   const [prompts, setPrompts] = useState(null);
   const [page, setPage] = useState(0);
+
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
   const [choice, setChoice] = useState(false);
+
+  const [total, setTotal] = useState(null);
+  const [random, setRandom] = useState(null); 
 
   function handleChoice() {
     setChoice(!choice);
     console.log(choice);
   }
- 
-
-  useEffect(() => {
-    const loadPrompts = async () => {
-      try {
-        setIsLoading(true);
-        const res = await axios.get(
-          `https://api.are.na/v2/channels/playlist-prompts`,
-        { params: {
-          per: postsPerPage,
-          page: page
-        }
-      })  
-        setPrompts(shuffle(res.data.contents));
-        setErrorMsg('');
-      } catch (error) {
-        setErrorMsg('Having some loading trouble, please try again :)');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadPrompts();
-  }, [page]);
-
-  const loadMore = () => {
-    setPage((page) => page + 1);
-  };
 
    // shuffle prompts on refresh
    const shuffle = (contents) => {
@@ -63,9 +42,61 @@ function App() {
     return contents;
   }
 
+  useEffect(() => {
+    const loadPrompts = async () => {
+      try {
+        setIsLoading(true);
+        const res = await axios.get(
+          `https://api.are.na/v2/channels/playlist-prompts`,
+        { params: {
+          per: postsPerPage,
+          page: page
+        }
+      })  
+      if(!prompts) {
+        setTotal(res.data.length)
+        setPrompts(shuffle(res.data.contents));
+      } else {
+        shuffle(setPrompts((prompts) => [...prompts, ...res.data.contents]));
+      }
+        setErrorMsg('');
+      } catch (error) {
+        setErrorMsg('Having some loading trouble, please try again :)');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPrompts();
+    console.log(prompts);
+  }, [page]);
+
+  const loadMore = () => {
+    setPage((page) => page + 1);
+  };
+
+  const generateRandom = async () => {
+    const random_index = Math.floor(Math.random() * total);
+      try { 
+      const res = await axios.get(
+          `https://api.are.na/v2/channels/playlist-prompts`,
+        { params: {
+          per: 1,
+          page: random_index
+        }
+      })  
+      setRandom(res.data.contents); 
+    } catch(error) {
+      setErrorMsg('Having some loading trouble, please try again :)');
+    }
+  }
+
   return (
     <div className="wrapper">
       <div id="top"></div>
+
+      {/* <div className="overlay"></div> */}
+
 
       <div className={!choice ? "prompt-list" : "hide"}>
         {prompts && prompts.map(el => {
@@ -81,17 +112,23 @@ function App() {
       </div>
 
       <div className={choice ? "single-prompt" : "hide"}>
-        <Prompt prompt={'this prompt has been chosen for you'}/>
+          {random && <Prompt prompt={random[0].content}/>}
       </div>
+
+
+      {/* <img className="gradient" src={gradient}></img> */}
 
       <Intro/>
 
       <div className="choose" onClick={() => {
-          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice();
-        }}>{choice ? 'choose one myself' : 'choose one for me'}</div>
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
+        }}>{choice ? 'choose myself' : 'choose for me'}</div>
 
 
+        
     </div>
+
+
   );
 }
 
