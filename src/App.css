@@ -310,8 +310,9 @@ div.choose:hover{
       background: none;
   }
 
-  html, body{
+  html {
     overflow-x: hidden;
+    width: 100%;
   }
 
   .wrapper {
@@ -322,11 +323,13 @@ div.choose:hover{
 
   .prompt-list {
     margin-top: 60%;
-    width: auto;
   }
 
   .prompt {
     border-radius: 20px;
+    border: none;
+    background: none;
+    border-bottom: 1px dashed rgba(186, 85, 211, 0.4);
   }
 
   .prompt-text {
