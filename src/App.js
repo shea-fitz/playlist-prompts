@@ -6,7 +6,7 @@ import Intro from './components/Intro';
 import Prompt from './components/Prompt';
 import Overlay from './components/Overlay';
 
-import cd from './img/cd.png'
+import cd from './img/cd.svg'
 
 
 function App() {

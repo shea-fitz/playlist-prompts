@@ -33,10 +33,10 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: radial-gradient(64.05% 64.05% at 36.01% 35.95%, rgba(131, 181, 142, 0.126) 65.1%, rgba(0, 26, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-  linear-gradient(180.09deg, rgba(255, 255, 255, 0.54) 80.33%, #FFFFFF 80.36%, rgb(140, 45, 164) 112.37%),
+  background: radial-gradient(60.77% 56.77% at 61.47% 30.92%, rgba(165, 255, 185, 0.126) 65.1%, rgba(2, 51, 228, 0.052) 81.77%, rgba(255, 0, 15, 0.042) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+  linear-gradient(180.09deg, rgba(255, 255, 255, 0.54) 70.33%, #FFFFFF 91.36%, #9D24D6 112.37%),
   linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  opacity: 90%;
+  opacity: 95%;
   z-index: -1000;
 }
 
@@ -363,8 +363,9 @@ div.choose:hover{
     left:0px;
   }
 
-  .gradient {
-    width: 2000vw;
+  .title {
+    border: none;
+    background-color: none;
   }
 
 }
