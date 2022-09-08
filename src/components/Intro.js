@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { Fade } from 'react-reveal';
 
+import tape from '../img/tape.svg'
+
 const Intro = () => {
 
     const [visibility, setVisibility] = useState(false);
@@ -17,7 +19,10 @@ return(
         <a href="#top" className="title">Playlist Prompts</a>
     </div>
 
-    <div className="about" onClick={handleModal}>about</div>
+    <div className="about" onClick={handleModal}>
+        
+        <img src={tape} className="illo"/>
+        about</div>
 
 
         <Fade when={visibility}>

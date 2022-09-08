@@ -6,6 +6,8 @@ import Intro from './components/Intro';
 import Prompt from './components/Prompt';
 import Overlay from './components/Overlay';
 
+import cd from './img/cd.svg'
+
 
 function App() {
   let postsPerPage = 100;
@@ -95,7 +97,7 @@ function App() {
       {/* Link to top for scrolling */}
       <div id="top"></div>
 
-      {/* <Overlay/> */}
+      <Overlay/>
 
       {/* Prompt list – conditionally displays all prompts or single prompt */}
       <div className={!choice ? "prompt-list" : "hide"}>
@@ -121,7 +123,9 @@ function App() {
       {/* Random prompt button */}
       <div className="choose" onClick={() => {
           window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
-        }}>{choice ? 'choose myself' : 'choose for me'}</div>
+        }}>
+          <img src={cd} className="illo"/>
+          {choice ? 'choose myself' : 'choose for me'}</div>
 
     </div>
 
