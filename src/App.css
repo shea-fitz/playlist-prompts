@@ -24,6 +24,10 @@ html, body {
   font-family: 'Authentic Sans', Arial, Helvetica, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* OVERLAY */
 
 .overlay {
