@@ -41,11 +41,11 @@ return(
                 <div className="list-item"><div className="year">[2022]</div><div>This website</div></div>
             </div>
 
-            <p>For now, submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>, where it began.</p>
-
+            <p>Submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>, where it began.</p>
+{/* 
             <p className="credits">This site was designed and developed by Shea with support from <a href="https://www.jbell.life/" target="_blank">Julia Bell.</a>
             
-            </p>
+            </p> */}
 
 
         </div>

@@ -1,7 +1,13 @@
 @font-face {
-  font-family: 'Founders Grotesk';
-  src: url(./fonts/test-founders-grotesk-regular.woff);
+  font-family: 'Yellix';
+  src: url(./fonts/YellixTRIAL-Regular.8623a84c.otf);
 }
+
+@font-face {
+  font-family: 'Authentic Sans';
+  src: url(./fonts/AUTHENTICSans-90.woff);
+}
+
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -13,8 +19,10 @@ html, body {
   font-family: sans-serif;
   font-size: 1.25rem;
   letter-spacing: .3px;
+  overflow-x: hidden;
+  width: 100%;
   scroll-behavior: smooth;
-  font-family: 'Founders Grotesk', Arial, Helvetica, sans-serif;
+  font-family: 'Authentic Sans', Arial, Helvetica, sans-serif;
 }
 
 /* OVERLAY */
@@ -26,7 +34,7 @@ html, body {
   left: 0;
   right: 0;
   background: radial-gradient(64.05% 64.05% at 36.01% 35.95%, rgba(131, 181, 142, 0.126) 65.1%, rgba(0, 26, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-  linear-gradient(180.09deg, rgba(255, 255, 255, 0.54) 70.33%, #FFFFFF 85.36%, mediumorchid 112.37%),
+  linear-gradient(180.09deg, rgba(255, 255, 255, 0.54) 80.33%, #FFFFFF 80.36%, rgb(140, 45, 164) 112.37%),
   linear-gradient(0deg, #FFFFFF, #FFFFFF);
   opacity: 90%;
   z-index: -1000;
@@ -46,7 +54,7 @@ html, body {
 .prompt-list {
   display: flex;
   flex-direction: column;  
-  gap: 24px;
+  gap: 16px;
   width: 100%;
   line-height: 150%;
   align-items: center;
@@ -63,13 +71,15 @@ html, body {
   font-size: 1.75rem;
   line-height: 125%;
   letter-spacing: .1px;
-  border: 1px solid rgba(234, 203, 241, 0.78);
+  border: 1.5px dashed rgba(234, 203, 241, 0.78);
   fill: white;
+  border-radius: 1000px;
+  background: linear-gradient(89.81deg, rgba(218, 112, 214, 0.15) 0.13%, rgba(218, 112, 214, 0) 58.88%, rgba(218, 112, 214, 0.15) 90.63%);
 }
 
 .prompt-text {
   justify-content: center;
-  width: 300px;
+  width: 350px;
 }
 
 /* .prompt:hover {
@@ -88,7 +98,7 @@ html, body {
 a {
   color: mediumorchid;
   text-decoration: underline;
-  text-decoration-color: mediumaquamarine;
+  text-decoration-color: mediumorchid;
   transition: text-decoration-color .2s;
 }
 
@@ -99,14 +109,20 @@ a:hover {
 
 .title {
   text-decoration: none;
+  border: 1px solid mediumorchid;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background-color: white;
+  filter: drop-shadow(0 0 20px rgba(186, 85, 211, 0.25));
 }
 
 
 .header {
   width: 100%;
-  background: linear-gradient(180deg, #ffffffba 40%, #ffffff6b 68.49%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, #fffffff0 40%, #ffffff6b 68.49%, rgba(255, 255, 255, 0) 100%);
   position: fixed;
   top: 0;
+  height: 50px;
   text-align: center;
   padding: 24px 0px;
   text-transform: uppercase;
@@ -122,6 +138,7 @@ div.about, div.choose {
   flex-direction: column;
   gap: 4px;
   align-items: center;
+  text-transform: uppercase;
   fill: none;
   /* z-index: 1000; */
   transition: transform .3s;
@@ -133,7 +150,7 @@ div.about:hover, div.choose:hover {
 
 div.about {
   top:50%;
-  right: 20%;
+  right: 15%;
   transform: rotate(10deg)
 }
 
@@ -143,7 +160,7 @@ div.about:hover{
 
 div.choose {
   top: 35%;
-  left: 20%;
+  left: 15%;
   transform: rotate(-8deg)
 }
 
@@ -261,26 +278,52 @@ div.choose:hover{
   transition: box-shadow .2s;
 }
 
-.illo:hover{
-  filter: drop-shadow(0 0 20px rgba(127, 255, 212, 0.672)));
-}
-
 
 /* MOBILE */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
+  div.about{
+    right: 5%;
+  }
+  
+  div.choose {
+   left: 5%;
+  }
+   
+} 
+
+
+
+
+@media only screen and (max-width: 500px) {
 
   .overlay {
       background: none;
   }
 
   .wrapper {
-    margin-top: 30%;
+   /* padding-top: 40%; */
+    /* overflow: none; */
+    margin: 0;
+  }
+
+  .prompt-list {
+    margin-top: 60%;
+    width: auto;
+  }
+
+  .prompt {
+    border-radius: 20px;
+  }
+
+  .prompt-text {
+    width: 80vw;
+    font-size: 1.75rem;
   }
 
   .intro-modal {
-    width: 90vw;
-    top: 10%;
+    width: 100vw;
+    top: 20%;
     background: rgba(255, 255, 255, .95);
     color: mediumorchid;
     font-size: .75rem;
@@ -296,6 +339,8 @@ div.choose:hover{
 
   .header {
     height: 300px;
+    width: 100%;
+    padding-top: 8px;
   }
 
   /* .year {
@@ -303,15 +348,19 @@ div.choose:hover{
     padding-right: 16px;
   } */
 
+  div.about, div.choose {
+    font-size: .75rem;
+  }
+
   div.about {
-    top: 32px;
-    right: 16px;
+    top: 48px;
+    right: 8px;
   }
 
   div.choose {
-    top: 16px;
+    top: 24px;
     /* top: auto; */
-    left: 16px;
+    left:0px;
   }
 
   .gradient {
