@@ -128,7 +128,7 @@ function App() {
           window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
         }}>
           <img src={cd} className="illo"/>
-          {choice ? 'choose myself' : 'choose for me'}</div>
+          {choice ? 'back' : 'choose'}</div>
 
     </div>
 
