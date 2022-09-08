@@ -298,6 +298,10 @@ div.choose:hover{
 } 
 
 
+.psa {
+  display: none;
+}
+
 
 
 @media only screen and (max-width: 500px) {
@@ -336,6 +340,7 @@ div.choose:hover{
     background: rgba(255, 255, 255, .95);
     color: mediumorchid;
     font-size: .75rem;
+    border-radius: 0;
   }
 
   .list-item {
@@ -344,6 +349,10 @@ div.choose:hover{
 
   .illo {
     width: 100px;
+  }
+
+  .single-prompt {
+    margin-top: 60%;
   }
 
   .header {
@@ -375,6 +384,15 @@ div.choose:hover{
   .title {
     border: none;
     background: none;
+  }
+
+  .psa {
+    display: block;
+    color: mediumorchid;
+    font-style: italic;
+    font-size: .8rem;
+    padding: 24px;
+    line-height: 100%;
   }
 
 }
