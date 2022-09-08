@@ -102,7 +102,7 @@ function App() {
       {/* Prompt list – conditionally displays all prompts or single prompt */}
       <div className={!choice ? "prompt-list" : "hide"}>
 
-        <p className="psa">This site is more effective on a larger screen, but feel free to continue browsing on your phone :)</p>
+        {/* <p className="psa">This site is more effective on a larger screen, but feel free to continue browsing on your phone :)</p> */}
 
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)

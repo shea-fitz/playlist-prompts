@@ -338,12 +338,14 @@ div.choose:hover{
   }
 
   .intro-modal {
-    width: 100vw;
+    width: 80vw;
     top: 20%;
     background: rgba(255, 255, 255, .95);
     color: mediumorchid;
     font-size: .75rem;
     border-radius: 0;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .list-item {
