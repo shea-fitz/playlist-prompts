@@ -250,6 +250,7 @@ div.choose:hover{
   margin-bottom: 24px;
   background: none;
   position: relative;
+  border-radius: 100px;
   /* z-index: 1000; */
 }
 
