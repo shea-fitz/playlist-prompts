@@ -3,6 +3,11 @@
   src: url(./fonts/test-founders-grotesk-regular.woff);
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html, body {
   height: 100%;
   font-family: sans-serif;
@@ -247,14 +252,14 @@ div.choose:hover{
 }
 
 .illo {
-  box-shadow: -8px 8px 20px 0px rgba(186, 85, 211, 0.25);
+  filter: drop-shadow(0 0 20px rgba(186, 85, 211, 0.25));
   width: 150px;
   fill: none;
   transition: box-shadow .2s;
 }
 
 .illo:hover{
-  box-shadow: -8px 8px 20px 0px rgba(127, 255, 212, 0.372);
+  filter: drop-shadow(0 0 20px rgba(127, 255, 212, 0.672)));
 }
 
 
