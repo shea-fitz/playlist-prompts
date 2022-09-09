@@ -28,20 +28,21 @@ return(
         <Fade when={visibility}>
         <div className={visibility ? "intro-modal" : "hide"}>
             <p>
-            Playlist Prompts was started by <a href="https://www.are.na/shea" target="_blank">Shea Fitzpatrick</a> in 2020 and so far has taken form as:
+            Playlist Prompts is a collection of very specific playlist ideas started by <a href="https://www.are.na/shea" target="_blank">Shea</a> in 2020 and contributed to by many. 
+            So far it has taken form as:
             </p>
 
             <div className="list">
-                <div className="list-item"><div className="year">[ongoing]</div><div>A collaborative collection on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a></div></div>
+                <div className="list-item"><div className="year">[ongoing]</div><div>An open channel on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a></div></div>
 
                 <div className="list-item"><div className="year">[2020]</div><div>A participatory <a href="https://tinyletter.com/playlistprompts" target="_blank">newsletter</a></div></div>
 
-                <div className="list-item"><div className="year">[2021]</div><div>A poem co-written with <a href="https://www.are.na/mad">Mad</a> that was published in the <a href="https://store.are.na/products/are-na-annual-2021?variant=38246218563735" target="_blank">Are.na Annual</a>, with an accompanying <a href="https://www.are.na/mad/a-channel-that-is-a-gift" target="_blank">channel and playlist</a></div></div>
+                <div className="list-item"><div className="year">[2021]</div><div>A poem published in the <a href="https://store.are.na/products/are-na-annual-2021?variant=38246218563735" target="_blank">Are.na Annual</a>, with an accompanying <a href="https://www.are.na/mad/a-channel-that-is-a-gift" target="_blank">channel and playlist</a></div></div>
 
                 <div className="list-item"><div className="year">[2022]</div><div>This website</div></div>
             </div>
 
-            <p>Submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>, where it began.</p>
+            <p>Submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>.</p>
 {/* 
             <p className="credits">This site was designed and developed by Shea with support from <a href="https://www.jbell.life/" target="_blank">Julia Bell.</a>
             

@@ -204,7 +204,7 @@ div.choose:hover{
   linear-gradient(180.09deg, rgba(255, 255, 255, 0.54) 70.33%, #ffffff89 85.36%, mediumorchid 112.37%),
   linear-gradient(0deg, #ffffffbe, #ffffffd6);    
     border: 1px solid mediumorchid;
-    width: auto;
+    width: 45vw;
     position: fixed;
     top: 20%;
     display: flex;
