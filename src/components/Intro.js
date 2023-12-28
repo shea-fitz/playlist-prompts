@@ -22,7 +22,7 @@ return(
     <div className="about" onClick={handleModal}>
         
         <img src={tape} className="illo"/>
-        about</div>
+        <span className="label">about</span></div>
 
 
         <Fade when={visibility}>
@@ -43,10 +43,8 @@ return(
             </div>
 
             <p>Submissions and responses are welcomed on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a>.</p>
-{/* 
-            <p className="credits">This site was designed and developed by Shea with support from <a href="https://www.jbell.life/" target="_blank">Julia Bell.</a>
-            
-            </p> */}
+
+            <div className="close-modal"><button onClick={handleModal}>CLOSE</button></div>
 
 
         </div>

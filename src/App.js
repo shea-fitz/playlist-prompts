@@ -99,36 +99,39 @@ function App() {
 
       <Overlay/>
 
+     
+
       {/* Prompt list – conditionally displays all prompts or single prompt */}
       <div className={!choice ? "prompt-list" : "hide"}>
-
-        {/* <p className="psa">This site is more effective on a larger screen, but feel free to continue browsing on your phone :)</p> */}
-
         {prompts && prompts.map(el => {
           return (<Prompt key={el.key} prompt={el.content}/>)
         })}
+      </div>
 
-        <div>
+      {/* Loading button */}
+      <div className={choice ? 'hide' : 'loading-button'}>
           <button className={isLoading ? 'loading' : 'load-more'} onClick={loadMore}>
             {isLoading ? 'Playing the queue...' : 'Load more'}
           </button>
         </div>
 
-      </div>
+
 
       <div className={choice ? "single-prompt" : "hide"}>
           {random && <Prompt prompt={random[0].content}/>}
       </div>
 
-      {/* Header and modal content */}
-      <Intro/>
+       {/* Header and modal content */}
+       <Intro/>
+
+      
 
       {/* Random prompt button */}
       <div className="choose" onClick={() => {
           window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
         }}>
           <img src={cd} className="illo"/>
-          {choice ? 'back' : 'choose'}</div>
+          <span className="label">{choice ? 'back' : 'choose'}</span></div>
 
     </div>
 
