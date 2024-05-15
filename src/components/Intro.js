@@ -35,7 +35,7 @@ return(
             <div className="list">
                 <div className="list-item"><div className="year">[ongoing]</div><div>An open channel on <a href="https://www.are.na/shea/playlist-prompts" target="_blank">Are.na</a></div></div>
 
-                <div className="list-item"><div className="year">[2020]</div><div>A participatory <a href="https://tinyletter.com/playlistprompts" target="_blank">newsletter</a></div></div>
+                <div className="list-item"><div className="year">[2020]</div><div>A participatory newsletter (RIP TinyLetter)</div></div>
 
                 <div className="list-item"><div className="year">[2021]</div><div>A poem published in the <a href="https://store.are.na/products/are-na-annual-2021?variant=38246218563735" target="_blank">Are.na Annual</a>, with an accompanying <a href="https://www.are.na/mad/a-channel-that-is-a-gift" target="_blank">channel and playlist</a></div></div>
 
