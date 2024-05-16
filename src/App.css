@@ -382,8 +382,7 @@ div.choose:hover{
     color: mediumorchid;
     font-size: .75rem;
     border-radius: 0;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 24px;
   }
 
   .list-item {

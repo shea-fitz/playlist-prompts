@@ -1,7 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
-const Prompt = ({prompt, key}) => {
+const Prompt = ({prompt}) => {
 return(
     <>
     <Fade cascade>

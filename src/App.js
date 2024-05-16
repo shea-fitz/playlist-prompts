@@ -5,6 +5,8 @@ import axios from 'axios';
 import Intro from './components/Intro';
 import Prompt from './components/Prompt';
 import Overlay from './components/Overlay';
+import PromptList from './components/PromptList';
+import ChosenPrompt from './components/ChosenPrompt';
 
 import cd from './img/cd.svg'
 
@@ -99,14 +101,10 @@ function App() {
 
       <Overlay/>
 
+    
+      {!choice ? <PromptList prompts={prompts}/> : random && <ChosenPrompt key={random[0].key} prompt={random[0].content}/>}
+      
      
-
-      {/* Prompt list – conditionally displays all prompts or single prompt */}
-      <div className={!choice ? "prompt-list" : "hide"}>
-        {prompts && prompts.map(el => {
-          return (<Prompt key={el.key} prompt={el.content}/>)
-        })}
-      </div>
 
       {/* Loading button */}
       <div className={choice ? 'hide' : 'loading-button'}>
@@ -115,12 +113,6 @@ function App() {
           </button>
         </div>
 
-
-
-      <div className={choice ? "single-prompt" : "hide"}>
-          {random && <Prompt prompt={random[0].content}/>}
-      </div>
-
        {/* Header and modal content */}
        <Intro/>
 
@@ -128,7 +120,7 @@ function App() {
 
       {/* Random prompt button */}
       <div className="choose" onClick={() => {
-          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); generateRandom();
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});  handleChoice(); {choice && generateRandom()};
         }}>
           <img src={cd} className="illo"/>
           <span className="label">{choice ? 'back' : 'choose'}</span></div>
